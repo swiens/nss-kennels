@@ -13,6 +13,7 @@ import { AnimalForm } from "./animal/AnimalForm";
 import { EmployeeDetail } from "./employee/EmployeeDetail";
 import { LocationDetail } from "./location/LocationDetail";
 import { AnimalDetails } from "./animal/AnimalDetail";
+import { AnimalSearch } from "./animal/AnimalSearch";
 
 export const ApplicationViews = (props) => {
   return (
@@ -38,9 +39,15 @@ export const ApplicationViews = (props) => {
             <Route
               exact
               path="/animals"
-              render={(props) => <AnimalList {...props} />}
+              render={(props) => {
+                return (
+                  <>
+                    <AnimalSearch />
+                    <AnimalList {...props} />
+                  </>
+                );
+              }}
             />
-
             <Route
               exact
               path="/animals/create"
@@ -49,6 +56,10 @@ export const ApplicationViews = (props) => {
             <Route
               path="/animals/:animalId(\d+)"
               render={(props) => <AnimalDetails {...props} />}
+            />
+            <Route
+              path="/animals/edit/:animalId(\d+)"
+              render={(props) => <AnimalForm {...props} />}
             />
           </CustomerProvider>
         </LocationProvider>

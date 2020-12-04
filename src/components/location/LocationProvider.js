@@ -37,7 +37,7 @@ export const LocationProvider = (props) => {
     */
     return (
         <LocationContext.Provider value={{
-            locations, addLocation, getLocations
+            locations, addLocation, getLocations,
         }}>
             {props.children}
         </LocationContext.Provider>
