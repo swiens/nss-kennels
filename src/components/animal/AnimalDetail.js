@@ -18,30 +18,8 @@ export const AnimalDetails = (props) => {
       <div className="animal__breed">{animal.breed}</div>
       <div className="animal__location">Location: {animal.location.name}</div>
       <div className="animal__owner">Customer: {animal.customer.name}</div>
-      <button
-        onClick={() => {
-          releaseAnimal(animal).then(() => {
-            props.history.push("/animals");
-          });
-        }}
-      >
-        Release Animal
-      </button>
-      <button
-        onClick={() => {
-          props.history.push(`/animals/edit/${animal.id}`);
-        }}
-      >
+        
         Edit
-      </button>
-      <button
-        className="btn--release"
-        onClick={() => {
-          // Code to delete animal from database
-        }}
-      >
-        Release
-      </button>
       <button
         className="btn--release"
         onClick={() => {
